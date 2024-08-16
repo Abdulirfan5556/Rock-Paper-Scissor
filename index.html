@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+</head>
+<body>
+    <center>
+    <h1>Rock Paper Scissor</h1><br>
+    <p>Play the Game with Computer &#129309;</p>
+    <p>Enter: Rock or Paper or Scissor &#128514;</p>
+    <p>Creator: Abdul Salam Irfan &#129311;</p>
+    </center>
+    <script src="script.js"></script>
+</body>
+<script>
+    const userChoice = prompt("Rock Paper Scissor", "Enter Rock or Paper or Scissor").toLowerCase();
+    const choices = ["rock", "paper", "scissor"];
+    const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+function determineWinner(userChoice, computerChoice) {
+    if (userChoice === computerChoice) {
+        return "It's a tie!";
+    }
+    if (userChoice === "rock") {
+        if (computerChoice === "scissor") {
+            return "You win!";
+        } else {
+            return "You lose!";
+        }
+    }
+    if (userChoice === "paper") {
+        if (computerChoice === "rock") {
+            return "You win!";
+        } else {
+            return "You lose!";
+        }
+    }
+    if (userChoice === "scissor") {
+        if (computerChoice === "paper") {
+            return "You win!";
+        } else {
+            return "You lose!";
+        }
+    }
+}
+
+if (choices.includes(userChoice)) {
+    alert(`You chose: ${userChoice}\nComputer chose: ${computerChoice}\n${determineWinner(userChoice, computerChoice)}`);
+} else {
+    alert("Invalid choice! Please enter Rock, Paper, or Scissor.");
+}
+
+</script>
+</html>
